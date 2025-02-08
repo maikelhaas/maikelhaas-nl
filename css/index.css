@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+
+:root {
+  --background: #f5faff;
+  --lightBlue: #ebf0f5;
+  --darkGrey: #161616;
+  --mediumGrey: #646464;
+  --primary: #270d75;
+  --primaryLight: #30108f;
+  --secondary: #10ffbc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--darkGrey);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 4.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2rem;
+  position: relative;
+  width: fit-content;
+}
+
+h3::after {
+  content: "";
+  width: 0;
+  height: 0.125rem;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 2.125rem;
+  transition: width 0.32s ease;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: var(--primary);
+  margin-left: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h4::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  width: 2rem;
+  height: 0.125rem;
+  background: var(--primary);
+  margin-left: -2.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: var(--darkGrey);
+  text-decoration: none;
+}
+
+a:hover h3::after {
+  width: 100%;
+}
+
+a:hover h3 {
+  color: var(--primary);
+}
+
+.container {
+  margin: 0 auto;
+  width: calc(100vw - 4rem);
+  max-width: 75rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid.about {
+  place-items: center;
+}
+
+nav {
+  height: 10rem;
+  display: grid;
+  align-items: center;
+}
+
+header {
+  background: linear-gradient(256deg, var(--primaryLight), var(--primary));
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding-bottom: 15rem;
+}
+
+header section {
+  margin-top: 5rem;
+}
+
+header h1 {
+  color: var(--background);
+}
+
+header h4 {
+  color: var(--secondary);
+}
+
+header h4::before {
+  background: var(--secondary);
+}
+
+header p {
+  color: var(--background);
+  margin-top: 1.5rem;
+}
+
+svg {
+  width: 5rem;
+  fill: var(--background);
+}
+
+.title {
+  margin-top: 7.5rem;
+  margin-bottom: 4rem;
+}
+
+.portfolio.video {
+  margin-top: -10rem;
+  z-index: 1;
+  position: relative;
+}
+
+.portfolio p {
+  color: var(--mediumGrey);
+}
+
+.portfolio img,
+.portfolio video {
+  width: 100%;
+  transition: transform 0.32s ease;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio a:hover video,
+.portfolio video:hover,
+.detail img:hover {
+  transform: scale(1.02);
+}
+
+article {
+  margin-bottom: 4rem;
+}
+
+.about .image {
+  order: 1;
+}
+
+.about .text {
+  order: 2;
+}
+
+.card {
+  margin-bottom: 2.5rem;
+  transition: padding-left 0.32s ease;
+}
+
+.card p {
+  color: var(--mediumGrey);
+}
+
+.card strong {
+  color: var(--darkGrey);
+}
+
+.list {
+  margin-bottom: 3.5rem;
+}
+
+.list p {
+  margin-bottom: 1.5rem;
+  transition: padding-left 0.32s ease;
+  color: var(--mediumGrey);
+}
+
+.card.animated:hover,
+.list p:hover {
+  cursor: default;
+  padding-left: 0.5rem;
+}
+
+.description p {
+  width: 90%;
+}
+
+.text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.about .image {
+  width: 75%;
+}
+
+.about img {
+  width: 100%;
+}
+
+.detail {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+footer {
+  margin: 10rem 0 10rem -1.75rem;
+}
+
+footer a {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  display: inline-block;
+}
+
+footer a:hover {
+  background-color: var(--lightBlue);
+}
+
+footer svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 1.75rem;
+  fill: var(--mediumGrey);
+}
+
+footer a:hover svg {
+  fill: var(--primary);
+}
+
+@media (min-width: 50rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  .full {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+  }
+
+  header section {
+    width: 80%;
+  }
+
+  article {
+    margin-bottom: 0;
+  }
+
+  .title {
+    width: calc(50% - 1rem);
+  }
+
+  .secondItem {
+    margin-top: 12rem;
+  }
+
+  .thirdItem {
+    margin-top: -6rem;
+  }
+
+  .fourthItem {
+    margin-top: 6rem;
+  }
+
+  .about .text {
+    order: 1;
+  }
+
+  .about .image {
+    order: 2;
+  }
+}
